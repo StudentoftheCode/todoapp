@@ -1,0 +1,40 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html{
+    font-size: 62.5%;
+}
+body{
+    display: flex;
+    justify-content: space-between;
+}
+.add-section{
+    width: 33.33%;
+    font-size: 2rem;
+    border: 2px solid black;
+}
+.add-section *{
+    margin: 2% 0 2% 2%;
+}
+input{
+    border-radius: 50px;
+    height: 4rem;
+    width: 75%;
+    text-align: center;
+}
+#addTask{
+    width: 50%;
+    height: 2rem;
+}
+.list-section{
+    width: 66.66%;
+    border: 2px solid black;
+    font-size: 2rem;
+}
+.list-section ol{
+    margin: 2% 0 0 2%;
+    padding: 0;
+    list-style-position: inside;
+}
