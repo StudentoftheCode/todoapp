@@ -2,7 +2,7 @@ const User = require('../models/User')
 const validator = require('validator')
 
 exports.getLogin = (req, res) => {
-    res.render('login') // Make sure there's a login.ejs view
+    res.render('login') 
 }
 
 exports.postLogin = async (req, res, next) => {
@@ -32,7 +32,7 @@ exports.postLogin = async (req, res, next) => {
 }
 
 exports.getSignup = (req, res) => {
-    res.render('signup') // Make sure there's a signup.ejs view
+    res.render('signup') 
 }
 
 exports.postSignup = async (req, res, next) => {
