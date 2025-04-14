@@ -32,7 +32,7 @@ app.use(
     saveUninitialized: false,
     store: MongoStore.create({
       mongoUrl: process.env.MONGO_URI,
-      collection: 'sessions', 
+      collectionName: 'sessions', 
     }),
   })
 );
