@@ -27,12 +27,13 @@ app.use(logger('dev'));
 // Sessions
 app.use(
   session({
-    secret: process.env.SESSION_SECRET,  // Use the session secret from .env
+    secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: false,
     store: new MongoStore({
-      mongoUrl: process.env.DB_STRING,  // Use DB_STRING from .env for the session store
-      collection: 'sessions',  // Optional: Name of the collection to store session data
+      mongoUrl: process.env.MONGO_URI,
+      dbname: yourtodos,
+      collection: 'sessions', 
     }),
   })
 );
