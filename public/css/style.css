@@ -63,7 +63,7 @@ body {
   grid-template-columns: 1fr; /* mobile-first */
   gap: var(--gap);
   max-width: 1200px;
-  margin: var(--gap) auto;
+  margin: var(--gap) 50%;
   padding: 0 var(--gap);
 }
 
