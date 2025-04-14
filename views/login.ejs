@@ -17,42 +17,44 @@
     <h1>Login</h1>
   </header>
 
-  <main class="container">
-    <section class="auth-section">
-      <% if (locals.messages.errors) { %>
-        <% messages.errors.forEach(el => { %>
-          <div class="alert alert-danger"><%= el.msg %></div>
-        <% }) %>
-      <% } %>
-
-      <% if (locals.messages.info) { %>
-        <% messages.info.forEach(el => { %>
-          <div class="alert alert-info"><%= el.msg %></div>
-        <% }) %>
-      <% } %>
-
-      <form action="/login" method="POST" class="auth-form">
-        <label>
-          <span>Email</span>
-          <input
-            type="email"
-            name="email"
-            placeholder="you@example.com"
-            required
-          />
-        </label>
-        <label>
-          <span>Password</span>
-          <input
-            type="password"
-            name="password"
-            placeholder="••••••••"
-            required
-          />
-        </label>
-        <button type="submit">Log In</button>
-      </form>
-    </section>
-  </main>
+  <section class="center">
+    <main class="container">
+      <section class="auth-section">
+        <% if (locals.messages.errors) { %>
+          <% messages.errors.forEach(el => { %>
+            <div class="alert alert-danger"><%= el.msg %></div>
+          <% }) %>
+        <% } %>
+  
+        <% if (locals.messages.info) { %>
+          <% messages.info.forEach(el => { %>
+            <div class="alert alert-info"><%= el.msg %></div>
+          <% }) %>
+        <% } %>
+  
+        <form action="/login" method="POST" class="auth-form">
+          <label>
+            <span>Email</span>
+            <input
+              type="email"
+              name="email"
+              placeholder="you@example.com"
+              required
+            />
+          </label>
+          <label>
+            <span>Password</span>
+            <input
+              type="password"
+              name="password"
+              placeholder="••••••••"
+              required
+            />
+          </label>
+          <button type="submit">Log In</button>
+        </form>
+      </section>
+    </main>
+  </section>
 </body>
 </html>
