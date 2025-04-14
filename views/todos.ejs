@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Todo App</title>
+  <!-- Google Font -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="header">
+    <h1>Todo App</h1>
+    <a href="/logout" class="logout">Logout</a>
+  </header>
+
+  <main class="container">
+    <section class="tasks-section">
+      <ul class="tasks">
+        <% todos.forEach(el => { %>
+          <li class="task" data-id="<%= el._id %>">
+            <span class="<%= el.completed === true ? 'completed' : 'not' %>">
+              <%= el.todo %>
+            </span>
+            <span class="time"><%= el.time %></span>
+            <span class="actions">
+              <button type="button" class="edit">✎</button>
+              <button type="button" class="del">🗑</button>
+            </span>
+          </li>
+        <% }) %>
+      </ul>
+      <p class="status">
+        <%= user.userName %> has <strong><%= left %></strong> things left to do.
+      </p>
+    </section>
+
+    <aside class="add-section">
+      <form action="/todos/create" method="POST">
+        <label>
+          <span>Add New Todo</span>
+          <input
+            type="text"
+            name="todoItem"
+            placeholder="Enter task…"
+            required
+          />
+        </label>
+        <label>
+          <span>Due Time</span>
+          <input type="time" name="todoTime" required />
+        </label>
+        <button type="submit">Add Task</button>
+      </form>
+    </aside>
+  </main>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
