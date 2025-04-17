@@ -12,13 +12,13 @@ exports.postLogin = async (req, res, next) => {
     const user = await User.findOne({ email })
     if (!user) {
       req.flash('errors', { msg: 'Invalid email or password' })
-      return res.redirect('/login')
+      return res.redirect('/signup')
     }
 
     const isMatch = await user.comparePassword(password)
     if (!isMatch) {
       req.flash('errors', { msg: 'Invalid email or password' })
-      return res.redirect('/login')
+      return res.redirect('/signup')
     }
 
     req.logIn(user, (err) => {
@@ -65,7 +65,7 @@ exports.postSignup = async (req, res, next) => {
 
         if (existingUser) {
             req.flash('errors', { msg: 'Account with that email address or username already exists.' })
-            return res.redirect('/signup')
+            return res.redirect('/login')
         }
 
         const user = new User({
