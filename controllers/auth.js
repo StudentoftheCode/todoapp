@@ -11,13 +11,13 @@ exports.postLogin = async (req, res, next) => {
   try {
     const user = await User.findOne({ email })
     if (!user) {
-      req.flash('errors', { msg: 'Invalid email or password' })
+      req.flash('errors', { msg: 'Email or password does not exist' })
       return res.redirect('/signup')
     }
 
     const isMatch = await user.comparePassword(password)
     if (!isMatch) {
-      req.flash('errors', { msg: 'Invalid email or password' })
+      req.flash('errors', { msg: 'Email or password does not exist' })
       return res.redirect('/signup')
     }
 
